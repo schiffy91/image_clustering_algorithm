@@ -9,6 +9,7 @@ torchvision = "*"
 notebook = "*"
 facenet-pytorch = "*"
 scikit-learn = "*"
+tqdm = "*"
 
 [dev-packages]
 
