@@ -1,5 +1,12 @@
 {	
-	"settings": {},
+	"settings": {
+		"files.exclude": {
+			"**/__pycache__": true,
+			"**/*.egg-info": true,
+			"src/build": true,
+			"src/ica": true
+		}
+	},
 	"folders": [
 		{
 			"path": "."
