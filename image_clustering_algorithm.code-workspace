@@ -1,14 +1,8 @@
-{
+{	
+	"settings": {},
 	"folders": [
 		{
-			"path": "src"
-		},
-		{
-			"path": ".devcontainer"
-		},
-		{
-			"path": ".git"
+			"path": "."
 		}
-	],
-	"settings": {}
+	]
 }
