@@ -16,4 +16,4 @@
 Right now, the algorithm is coded to look for a flat directory of images at `~/Downloads/JPGs`
 
 ## GPU
-Should work on Mac via Metal and Windows / Linux via CUDA. If you're running out of memory, change batch_size = 16, num_workers = 32.
+Should work on Mac via Metal and Windows / Linux via CUDA. If you're running out of memory, change `batch_size = 16`, `num_workers = 32`.
