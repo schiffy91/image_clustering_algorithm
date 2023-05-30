@@ -16,7 +16,7 @@
 Right now, the algorithm is coded to look for a flat directory of images at `~/Downloads/JPGs`. You can uncomment `#ica.save_clustered_images("~/Downloads/ClusteredJPGs")` in `app.ipynb` to save the clusters in folders; otherwise, you can use the notebook's cells to view 5 photos in each cluster to determine its performance.
 
 ## Optimal Number of Clusters
-The algorithm defaults to 50 clusters. You can change `find_optimal_num_clusters` to `True` in `app.ipynb` (`ica.compute_clusters(max_clusters, find_optimal_num_clusters=False)`) if you want it enumerate [2...n]. Note: This will take a long time
+The algorithm defaults to 50 clusters. You can change `find_optimal_num_clusters` to `True` in `app.ipynb` (`ica.compute_clusters(max_clusters, find_optimal_num_clusters=False)`) if you want it enumerate K-means for cluster size [2...n] (and choose the optimal cluster size). Note: This will take a long time
 
 
 ## GPU
