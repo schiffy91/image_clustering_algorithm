@@ -11,3 +11,9 @@
 1. `export ICA_PATH=~/.local/share/virtualenvs/ica`
 2. `cd src && python3 -m venv $ICA_PATH && source $ICA_PATH/bin/activate`
 3. `pip install .`
+
+## Images
+Right now, the algorithm is coded to look for a flat directory of images at `~/Downloads/JPGs`
+
+## GPU
+Should work on Mac via Metal and Windows / Linux via CUDA. If you're running out of memory, change batch_size = 16, num_workers = 32.
