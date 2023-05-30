@@ -1,0 +1,45 @@
+{
+	"name": "ICA Developer Container",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "."
+	},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": { 
+				"python.defaultInterpreterPath": "/usr/local/bin/python",
+				"python.linting.enabled": true,
+				"python.linting.pylintEnabled": true,
+				"python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
+				"python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+				"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+				"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+				"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint"
+			},			
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-toolsai.jupyter",
+				"ms-azuretools.vscode-docker",
+				"tamasfe.even-better-toml"
+			]
+		}
+	},
+ 	"runArgs": ["--gpus" ,"all", "--ulimit", "memlock=-1", "--ulimit", "stack=67108864", "--ipc=host"],
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [8888],
+	// Mount directories to the container
+	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/Downloads/JPGs,target=/root/Downloads/JPGs,type=bind,consistency=cached"
+	],
+	// Change the location where vscode's workspace is copied
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace/,type=bind,consistency=cached", 
+	"workspaceFolder": "/workspace",
+	// Install dependencies
+	"postCreateCommand": "python -m pip install --upgrade pip && pip install ${containerWorkspaceFolder}/src"
+}
